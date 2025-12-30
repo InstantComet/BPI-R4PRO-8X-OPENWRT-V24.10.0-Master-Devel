@@ -424,7 +424,7 @@ Description:   This package is support for MediaTek tunnel offload processor sys
   it to start. The tool will support logging functionality in the future.
 @@
 Config:
-	source "/storage/workspace/Banana-Devel/Banana-Pi-R4PRO/mtk-openwrt-feeds/feed/app/tops-tool/Config.in"
+	source "feeds/mtk_openwrt_feed/feed/app/tops-tool/Config.in"
 @@
 
 Package: tops-tool-autoload
@@ -471,7 +471,7 @@ Description:   Enable crypto engine to accelerate encrypt/decrypt. Support look 
   line mode only support ESP Tunnel mode (single tunnel) now.
 @@
 Config:
-	source "/storage/workspace/Banana-Devel/Banana-Pi-R4PRO/mtk-openwrt-feeds/feed/kernel/crypto-eip/Config.in"
+	source "feeds/mtk_openwrt_feed/feed/kernel/crypto-eip/Config.in"
 @@
 
 Package: kmod-crypto-eip-inline

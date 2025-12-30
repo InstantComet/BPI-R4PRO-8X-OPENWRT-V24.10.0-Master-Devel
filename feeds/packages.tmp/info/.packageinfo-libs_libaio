@@ -1,4 +1,5 @@
 Source-Makefile: feeds/packages/libs/libaio/Makefile
+Build-Types: host
 
 Package: libaio
 Version: 0.3.113-r3

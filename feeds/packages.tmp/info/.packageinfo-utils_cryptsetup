@@ -1,10 +1,12 @@
 Source-Makefile: feeds/packages/utils/cryptsetup/Makefile
-Build-Depends: !USE_GLIBC:argp-standalone
+Build-Depends: !USE_GLIBC:argp-standalone cryptsetup/host
+Build-Depends/host: lvm2/host libjson-c/host popt/host
+Build-Types: host
 
 Package: cryptsetup
 Submenu: Encryption
 Version: 2.7.4-r1
-Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +lvm2 +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
 Conflicts: 
 Menu-Depends: 
 Provides: 

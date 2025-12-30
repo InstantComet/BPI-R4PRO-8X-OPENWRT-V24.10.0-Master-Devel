@@ -30413,6 +30413,7 @@ Description: A library for efficient image processing and image analysis operati
 
 
 Source-Makefile: feeds/packages/libs/libaio/Makefile
+Build-Types: host
 
 Package: libaio
 Version: 0.3.113-r3
@@ -77453,7 +77454,7 @@ Config:
 Package: strongswan-default
 Submenu: VPN
 Version: 5.9.14-r7
-Depends: +libc strongswan +strongswan-charon +strongswan-mod-aes +strongswan-mod-attr +strongswan-mod-connmark +strongswan-mod-constraints +strongswan-mod-des +strongswan-mod-dnskey +strongswan-mod-fips-prf +strongswan-mod-gmp +strongswan-mod-hmac @(PACKAGE_strongswan-mod-kdf||PACKAGE_strongswan-mod-openssl||PACKAGE_strongswan-mod-wolfssl) +strongswan-mod-kernel-netlink +strongswan-mod-md5 +strongswan-mod-mgf1 +strongswan-mod-pem +strongswan-mod-pgp +strongswan-mod-pkcs1 +strongswan-mod-pubkey +strongswan-mod-random +strongswan-mod-rc2 +strongswan-mod-resolve +strongswan-mod-revocation +strongswan-mod-sha1 +strongswan-mod-sha2 +strongswan-mod-socket-default +strongswan-mod-sshkey +strongswan-mod-updown +strongswan-mod-x509 +strongswan-mod-xauth-generic +strongswan-mod-xcbc +strongswan-swanctl
+Depends: +libc strongswan +strongswan-charon +strongswan-ipsec +strongswan-mod-aes +strongswan-mod-attr +strongswan-mod-connmark +strongswan-mod-constraints +strongswan-mod-des +strongswan-mod-dnskey +strongswan-mod-fips-prf +strongswan-mod-gmp +strongswan-mod-hmac @(PACKAGE_strongswan-mod-kdf||PACKAGE_strongswan-mod-openssl||PACKAGE_strongswan-mod-wolfssl) +strongswan-mod-kernel-netlink +strongswan-mod-md5 +strongswan-mod-mgf1 +strongswan-mod-pem +strongswan-mod-pgp +strongswan-mod-pkcs1 +strongswan-mod-pubkey +strongswan-mod-random +strongswan-mod-rc2 +strongswan-mod-resolve +strongswan-mod-revocation +strongswan-mod-sha1 +strongswan-mod-sha2 +strongswan-mod-socket-default +strongswan-mod-sshkey +strongswan-mod-updown +strongswan-mod-x509 +strongswan-mod-xauth-generic +strongswan-mod-xcbc +strongswan-swanctl
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -91921,12 +91922,14 @@ Description:   A fast and low-memory footprint OCI Container Runtime fully writt
 
 
 Source-Makefile: feeds/packages/utils/cryptsetup/Makefile
-Build-Depends: !USE_GLIBC:argp-standalone
+Build-Depends: !USE_GLIBC:argp-standalone cryptsetup/host
+Build-Depends/host: lvm2/host libjson-c/host popt/host
+Build-Types: host
 
 Package: cryptsetup
 Submenu: Encryption
 Version: 2.7.4-r1
-Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +lvm2 +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -95150,6 +95153,8 @@ Description: LiSt Open Files - a diagnostic tool
 
 
 Source-Makefile: feeds/packages/utils/lvm2/Makefile
+Build-Depends/host: libaio/host
+Build-Types: host
 
 Package: libdevmapper
 Version: 1.02.199
@@ -95195,6 +95200,27 @@ Description:  The device-mapper is a component of the 2.6 linux kernel that supp
  volume management. It is required by LVM2 and EVMS.
  This variant supports SELinux
 
+@@
+
+Package: dmsetup
+Submenu: Disc
+Version: 2.03.25-r1
+Depends: +libc +libdevmapper
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: The Linux Kernel Device Mapper userspace setup utility
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: LVM2.2.03.25.tgz
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.lib
+CPE-ID: cpe:/a:heinz_mauelshagen:lvm2
+URL: https://sourceware.org/dm/
+Type: ipkg
+Description: The Linux Kernel Device Mapper userspace setup utility
 @@
 
 Package: lvm2

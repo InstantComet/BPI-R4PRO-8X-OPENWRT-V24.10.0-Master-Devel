@@ -37,4 +37,22 @@ Hidden: 1
 Description:     Translation for luci-app-nikki - 简体中文 (Chinese Simplified)
 @@
 
+Package: luci-i18n-nikki-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-nikki
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-nikki - zh-tw translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-nikki - 繁體中文 (Chinese Traditional)
+@@
+
 

@@ -1,4 +1,6 @@
 Source-Makefile: feeds/packages/utils/lvm2/Makefile
+Build-Depends/host: libaio/host
+Build-Types: host
 
 Package: libdevmapper
 Version: 1.02.199
@@ -44,6 +46,27 @@ Description:  The device-mapper is a component of the 2.6 linux kernel that supp
  volume management. It is required by LVM2 and EVMS.
  This variant supports SELinux
 
+@@
+
+Package: dmsetup
+Submenu: Disc
+Version: 2.03.25-r1
+Depends: +libc +libdevmapper
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: The Linux Kernel Device Mapper userspace setup utility
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: LVM2.2.03.25.tgz
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.lib
+CPE-ID: cpe:/a:heinz_mauelshagen:lvm2
+URL: https://sourceware.org/dm/
+Type: ipkg
+Description: The Linux Kernel Device Mapper userspace setup utility
 @@
 
 Package: lvm2

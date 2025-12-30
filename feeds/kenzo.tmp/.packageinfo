@@ -938,6 +938,46 @@ Description:     Translation for luci-app-gost - 简体中文 (Chinese Simplifie
 @@
 
 
+Source-Makefile: feeds/kenzo/luci-app-guest-wifi/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-guest-wifi
+Submenu: 3. Applications
+Version: 2.0.1-r1
+Depends: +libc +luci-base +luci-compat +luci-lua-runtime
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for guest-wifi
+Maintainer: OpenWrt LuCI community
+Source: 
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI support for guest-wifi
+@@
+
+Package: luci-i18n-guest-wifi-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-guest-wifi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-guest-wifi - zh-cn translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-guest-wifi - 简体中文 (Chinese Simplified)
+@@
+
+
 Source-Makefile: feeds/kenzo/luci-app-ikoolproxy/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
 
@@ -1061,6 +1101,46 @@ LicenseFiles: LICENSE
 URL: https://github.com/gdy666/lucky
 Type: ipkg
 Description:   Main functions of Lucky: ipv4/ipv6 portforward,ddns,IOT wake on lan ,reverse proxy and more...
+@@
+
+
+Source-Makefile: feeds/kenzo/luci-app-openlist2/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-openlist2
+Submenu: 3. Applications
+Version: 1.0.2-r1
+Depends: +libc +openlist2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for openlist
+Maintainer: OpenWrt LuCI community
+Source: 
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI support for openlist
+@@
+
+Package: luci-i18n-openlist2-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openlist2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openlist2 - zh-cn translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openlist2 - 简体中文 (Chinese Simplified)
 @@
 
 
@@ -1429,6 +1509,29 @@ Description: Ifit Theme
 @@
 
 
+Source-Makefile: feeds/kenzo/luci-theme-material3/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-theme-material3
+Submenu: 4. Themes
+Version: 1.0-r20250617
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Material3 Theme
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: Material3 Theme
+@@
+
+
 Source-Makefile: feeds/kenzo/luci-theme-opentopd/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
 
@@ -1470,6 +1573,29 @@ Source:
 URL: https://github.com/openwrt/luci
 Type: ipkg
 Description: Tomato new kenzo
+@@
+
+
+Source-Makefile: feeds/kenzo/openlist2/Makefile
+Build-Depends: golang/host
+
+Package: openlist2
+Submenu: Web Servers/Proxies
+Version: 4.1.8-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A file list program that supports multiple storage
+Maintainer: sbwml <admin@cooluc.com>
+Source: openlist-4.1.8.tar.gz
+License: GPL-3.0
+URL: https://openlist.team/
+Type: ipkg
+Description:   A file list program that supports multiple storage, powered by Gin and Solidjs.
 @@
 
 
